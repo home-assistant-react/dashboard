@@ -18,6 +18,7 @@ Many features are still in progress and may not be fully functional or stable.</
 <p align="center">Please use caution when using any code from this repository in a production environment.</p>
 
 <p align="center">Feel free to contribute or provide feedback, but keep in mind that significant changes may occur frequently.</p>
+
 ----
 
 <h4 align="center">A fully customizable dashboard for <a href="https://www.home-assistant.io/" target="_blank">Home assistant</a> made with React.</h4>
