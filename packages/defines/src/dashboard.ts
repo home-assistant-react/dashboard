@@ -1,0 +1,11 @@
+export const DEFAULT_GRID_PANEL_W = 3;
+export const DEFAULT_GRID_PANEL_H = 5;
+
+export const DEFAULT_GRID_ROWS_HEIGHT = 30;
+export const DEFAULT_GRID_COLS = 20;
+
+export const DEFAULT_GRID_ITEMS_MARGIN_X = 0;
+export const DEFAULT_GRID_ITEMS_MARGIN_Y = 0;
+
+export const DEFAULT_GRID_CONTAINER_PADDING_X = 10;
+export const DEFAULT_GRID_CONTAINER_PADDING_Y = 10;

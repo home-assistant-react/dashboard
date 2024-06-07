@@ -1,0 +1,5 @@
+{
+  "extends": "@home-assistant-react/typescript-config/base.json",
+  "include": ["."],
+  "exclude": ["dist", "build", "node_modules"]
+}

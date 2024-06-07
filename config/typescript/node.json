@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Vite App",
+  "extends": "./base.json",
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "ESNext",
+    "lib": ["ESNext"],
+    "resolveJsonModule": true,
+    "moduleResolution": "node"
+  }
+}

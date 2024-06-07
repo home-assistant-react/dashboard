@@ -1,0 +1,32 @@
+{
+  "name": "homeassistant-react-dashboard",
+  "description": "A fully customizable dashboard for Home Assistant built with React.",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build:dashboard": "cd apps/dashboard && pnpm build",
+    "build:server": "cd apps/server && ENV=production pnpm build",
+    "dev": "cd apps/dashboard && pnpm dev",
+    "dev:server": "cd apps/server && pnpm dev",
+    "lint:check": "pnpm --filter @home-assistant-react/scripts run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "clean": "rm -rf node_modules && rm -rf ./apps/*/node_modules && rm -rf ./packages/*/node_modules && rm -rf ./config/*/node_modules && rm -rf ./panels/*/node_modules && rm -rf ./property-controllers/*/node_modules"
+  },
+  "author": "Jason Scoppetta <jason@ensiria.eu> (https://jasonscoppetta.dev)",
+  "license": "MIT",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "panels/*",
+    "property-controllers/*"
+  ],
+  "devDependencies": {
+    "eslint": "^8.4.1",
+    "expose-loader": "^4.1.0",
+    "html-webpack-plugin": "^5.5.3",
+    "prettier": "^3.0.1",
+    "@home-assistant-react/prettier-config": "workspace:*",
+    "@home-assistant-react/scripts": "workspace:*"
+  },
+  "packageManager": "pnpm@9.0.4"
+}

@@ -1,0 +1,142 @@
+.thermostat-slider{
+    --control-circular-slider-high-color: red;
+    --control-circular-slider-low-color: blue;
+    --control-circular-slider-color: green;
+    --control-circular-slider-interaction-margin: 0px;
+    --control-circular-slider-background: yellow;
+    --control-circular-slider-background-opacity: 0.3;
+    --primary-text-color: black;
+    --clear-background-color: white;
+}
+svg.thermostat-slider {
+    width: 100%;
+    display: block;
+    pointer-events: none;
+}
+.thermostat-slider g {
+    fill: none;
+}
+.thermostat-slider {
+    outline: none;
+}
+.thermostat-slider path[data-interaction] {
+    fill: none;
+    cursor: pointer;
+    pointer-events: auto;
+    stroke: transparent;
+    stroke-linecap: round;
+    stroke-width: calc(
+            24px + 2 * var(--control-circular-slider-interaction-margin)
+    );
+}
+.thermostat-slider circle[data-interaction] {
+    r: calc(12px + var(--control-circular-slider-interaction-margin));
+    fill: transparent;
+    cursor: pointer;
+    pointer-events: auto;
+}
+.thermostat-slider [data-interaction],
+.thermostat-slider [data-interaction] {
+    cursor: initial;
+    pointer-events: none;
+}
+
+.thermostat-slider .background {
+    transition:
+            stroke 180ms ease-in-out,
+            opacity 180ms ease-in-out;
+    stroke-linecap: round;
+    stroke-width: 24px;
+}
+
+.thermostat-slider .arc {
+    fill: none;
+    stroke-linecap: round;
+    stroke-width: 24px;
+    transition:
+            stroke-width 300ms ease-in-out,
+            stroke-dasharray 300ms ease-in-out,
+            stroke-dashoffset 300ms ease-in-out,
+            stroke 180ms ease-in-out,
+            opacity 180ms ease-in-out;
+}
+
+.thermostat-slider .target {
+    fill: none;
+    stroke-linecap: round;
+    stroke-width: 18px;
+    stroke: white;
+    transition:
+            stroke-width 300ms ease-in-out,
+            stroke-dasharray 300ms ease-in-out,
+            stroke-dashoffset 300ms ease-in-out,
+            stroke 180ms ease-in-out,
+            opacity 180ms ease-in-out;
+}
+
+.thermostat-slider .target-border {
+    transition:
+            stroke-width 300ms ease-in-out,
+            stroke-dasharray 300ms ease-in-out,
+            stroke-dashoffset 300ms ease-in-out,
+            stroke 180ms ease-in-out,
+            opacity 180ms ease-in-out;
+}
+
+.thermostat-slider .current {
+    fill: none;
+    stroke-linecap: round;
+    stroke-width: 8px;
+    stroke: var(--primary-text-color);
+    opacity: 0.5;
+    transition:
+            stroke-width 300ms ease-in-out,
+            stroke-dasharray 300ms ease-in-out,
+            stroke-dashoffset 300ms ease-in-out,
+            stroke 180ms ease-in-out,
+            opacity 180ms ease-in-out;
+}
+
+.thermostat-slider .arc-current {
+    stroke: var(--clear-background-color);
+}
+
+.thermostat-slider .arc-clear {
+    stroke: var(--clear-background-color);
+}
+.thermostat-slider .arc-colored {
+    opacity: 0.5;
+}
+.thermostat-slider .arc-active {
+    outline: none;
+}
+.thermostat-slider .arc-active:focus-visible {
+    stroke-width: 28px;
+}
+
+.thermostat-slider.pressed .arc,
+.thermostat-slider.pressed .target,
+.thermostat-slider.pressed .target-border,
+.thermostat-slider.pressed .current {
+    transition:
+            stroke-width 300ms ease-in-out,
+            stroke 180ms ease-in-out,
+            opacity 180ms ease-in-out;
+}
+
+.thermostat-slider .inactive .arc,
+.thermostat-slider .inactive .arc-current {
+    opacity: 0.3;
+}
+
+.thermostat-slider .value {
+    stroke: var(--control-circular-slider-color);
+}
+
+.thermostat-slider .low {
+    stroke: var(--control-circular-slider-low-color);
+}
+
+.thermostat-slider .high {
+    stroke: var(--control-circular-slider-high-color);
+}

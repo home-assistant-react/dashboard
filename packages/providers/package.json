@@ -1,0 +1,29 @@
+{
+  "name": "@home-assistant-react/providers",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "lint": "pnpm --filter @home-assistant-react/scripts run lint packages/providers"
+  },
+  "devDependencies": {
+    "@home-assistant-react/api": "workspace:*",
+    "@home-assistant-react/helpers": "workspace:*",
+    "@home-assistant-react/hooks": "workspace:*",
+    "@home-assistant-react/locale": "workspace:*",
+    "@home-assistant-react/types": "workspace:*",
+    "@home-assistant-react/defines": "workspace:*",
+    "@home-assistant-react/ui": "workspace:*",
+    "@home-assistant-react/eslint-config": "workspace:*",
+    "@home-assistant-react/typescript-config": "workspace:*",
+    "@types/react": "^18.2.20",
+    "@types/react-dom": "^18.2.7",
+    "home-assistant-js-websocket": "^9.3.0",
+    "react": "^18.2.0",
+    "react-intl": "^6.4.4",
+    "typescript": "^5.4.5"
+  }
+}

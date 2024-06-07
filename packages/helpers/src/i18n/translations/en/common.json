@@ -1,0 +1,15 @@
+{
+  "hello-world": "Hello {{name}}, {{count}} World!",
+  "errorMessages": {
+    "enterPhoneNumber": "You must enter a phone number",
+    "chooseOneOption": "You must choose an option",
+    "postOfficeCannotBeAPoBox": "This address can not be a P.O. Box",
+    "requiredField": "This field is required",
+    "enterAValidDate": "Enter a valid date",
+    "somethingWentWrong": "Something went wrong",
+    "minLength": "This field must be at least {{value}} characters",
+    "maxLength": "This field must be at most {{value}} characters",
+    "minCurrency": "Minimum amount is {{value}}",
+    "maxCurrency": "Maximum amount is {{value}}"
+  }
+}

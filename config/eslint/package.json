@@ -1,0 +1,15 @@
+{
+  "name": "@home-assistant-react/eslint-config",
+  "version": "0.0.0",
+  "private": true,
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.10.0",
+    "@typescript-eslint/parser": "^7.10.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-turbo": "^1.13.3",
+    "eslint-plugin-react-refresh": "^0.4.7",
+    "stylelint": "^16.6.0",
+    "stylelint-scss": "^6.3.0",
+    "typescript": "^5.4.5"
+  }
+}

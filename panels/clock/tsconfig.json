@@ -1,0 +1,4 @@
+{
+  "extends": "@home-assistant-react/typescript-config/panel.json",
+  "include": ["src"]
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login with google</title>
+    <style>body, html {
+        font-family: Arial, "Times New Roman", Times, serif;
+        font-size: 14px;
+        width: 100vw;
+        height: 100vh;
+        margin:0;
+        padding:0;
+    }
+
+    #root {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .message-box{
+        display: flex;
+        background-color: #efefef;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .message-box .icon {
+        padding: 20px;
+        font-size: 30px;
+        background-color: rgba(255, 208, 15, 0.25);
+        display: flex;
+        align-items: center;
+    }
+
+    .message-box .message{
+        padding: 20px;
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .message-box input {
+        border: 1px solid #f0f0f0;
+        font-size: 18px;
+        border-radius: 10px;
+        padding: 10px 10px;
+    }
+    .copy-box{
+        display: flex;
+        align-items: stretch;
+        gap: 10px;
+    }
+    .copy-box input {
+        border: 1px solid #f0f0f0;
+        font-size: 18px;
+        border-radius: 10px;
+        padding: 10px 10px;
+        flex-grow: 1;
+        background-color: #fff;
+    }
+    .copy-box button {
+        background-color: #ddd;
+        padding: 10px 10px;
+        border: 1px solid #f0f0f0;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    .copy-box button:hover {
+        background-color: #ccc;
+    }</style>
+</head>
+<body>
+<div id="root">
+    <div class="message-box">
+        <div class="icon">⚠️</div>
+        <div class="message">
+            Make sure to add the redirect URI for your application in Google Cloud Console
+            <div class="copy-box">
+                <input value="{{%REDIRECT_URI%}}" id="copy-input" readonly />
+                <button type="button" id="copy-button">Copy to clipboard</button>
+            </div>
+        </div>
+    </div>
+
+    <a href="{{%AUTH_URL%}}">
+        <img style="width: 200px" src="https://developers.google.com/identity/images/branding_guideline_sample_nt_rd_lg.svg" alt="Sign in with google" />
+    </a>
+</div>
+<script>
+    const copyButton = document.getElementById('copy-button');
+    const copyInput = document.getElementById('copy-input');
+    copyButton.addEventListener('click', () => {
+        copyInput.select();
+        document.execCommand('copy');
+    });
+</script>
+<noscript>Javascript must be enabled</noscript>
+</body>
+</html>

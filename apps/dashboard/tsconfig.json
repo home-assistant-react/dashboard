@@ -1,0 +1,8 @@
+{
+  "extends": "@home-assistant-react/typescript-config/app.json",
+  "include": ["src",
+    "../../declarations.d.ts",
+    "../../vite-env.d.ts"
+  ],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

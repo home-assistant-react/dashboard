@@ -1,0 +1,16 @@
+{
+  "name": "@home-assistant-react/locale",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "lint": "pnpm --filter @home-assistant-react/scripts run lint packages/locale"
+  },
+  "devDependencies": {
+    "@home-assistant-react/eslint-config": "workspace:*",
+    "@home-assistant-react/typescript-config": "workspace:*"
+  }
+}

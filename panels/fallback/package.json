@@ -1,0 +1,23 @@
+{
+  "name": "@home-assistant-react/panel-fallback",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "lint": "pnpm --filter @home-assistant-react/scripts run lint panels/fallback"
+  },
+  "devDependencies": {
+    "@home-assistant-react/api": "workspace:*",
+    "@home-assistant-react/types": "workspace:*",
+    "@home-assistant-react/ui": "workspace:*",
+    "@home-assistant-react/eslint-config": "workspace:*",
+    "@home-assistant-react/typescript-config": "workspace:*",
+    "@types/react": "^18.2.20",
+    "@types/react-dom": "^18.2.7",
+    "react": "^18.2.0",
+    "typescript": "^5.4.5"
+  }
+}

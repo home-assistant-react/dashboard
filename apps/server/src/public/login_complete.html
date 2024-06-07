@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login success</title>
+    <script>
+        window.opener.postMessage({auth_key: '{{%AUTH_ID%}}'}, '{{%ORIGIN%}}');
+        window.close();
+    </script>
+    <style>body, html {
+        font-family: Arial, "Times New Roman", Times, serif;
+        font-size: 14px;
+        width: 100vw;
+        height: 100vh;
+        margin:0;
+        padding:0;
+    }
+
+    #root {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }</style>
+</head>
+<body>
+    <div id="root">
+        You can close this window now.
+    </div>
+    <noscript>Javascript must be enabled</noscript>
+</body>
+</html>

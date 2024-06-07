@@ -1,0 +1,12 @@
+{
+  "extends": "@home-assistant-react/typescript-config/node.json",
+  "include": ["src"],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  },
+  "compilerOptions": {
+    "module": "esnext"
+  }
+}

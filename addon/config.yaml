@@ -1,0 +1,29 @@
+---
+version: 0.0.1
+slug: react_dashboard
+name: React Dashboard
+description: Fully customizable Dashboard for your Home Assistant made in React
+url: https://github.com/home-assistant-react/dashboard
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+homeassistant_api: true
+hassio_api: true
+ingress: true
+ingress_stream: true
+init: false
+map:
+  - all_addon_configs:rw
+  - backup:rw
+  - homeassistant_config:rw
+  - media:rw
+  - share:rw
+  - ssl:rw
+  - addon_config:rw
+panel_icon: mdi:atom
+apparmor: true
+ports:
+  8099/tcp: 8500

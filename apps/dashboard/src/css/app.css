@@ -1,0 +1,12 @@
+html body {
+    background: rgb(233, 242, 255);
+    background: linear-gradient(140deg, rgba(233, 242, 255, 1) 0%, rgba(208, 216, 235, 1) 100%);
+}
+html.dark body {
+    background: rgb(15,25,35); /* Darker base color */
+    background: linear-gradient(140deg, rgba(15,25,35,1) 0%, rgba(45,55,65,1) 100%); /* Darker gradient */
+}
+html, body{
+    height: 100%;
+    overflow: hidden;
+}

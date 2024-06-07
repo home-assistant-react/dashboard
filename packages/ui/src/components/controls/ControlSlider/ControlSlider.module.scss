@@ -1,0 +1,189 @@
+.Wrapper{
+  --control-slider-thickness: 100px;
+  --control-slider-border-radius: 24px;
+  --control-slider-color: rgba(51,65,85, 1);
+  --control-slider-background: rgba(148,163,184, 1);
+  --control-slider-handle-color: rgba(255,255,255, 1);
+  --control-slider-background-opacity: 0.2;
+  --control-slider-handle-margin: 12px;
+  --control-slider-handle-size: 4px;
+  --control-slider-min-height: 200px;
+  --control-slider-max-height: 320px;
+  --control-slider-height: 45vh;
+  --slider-size: 100%;
+  --value: 0;
+
+  &[data-direction="up"], &[data-direction="down"]{
+    height: var(--control-slider-height, 45vh);
+    max-height: var( --control-slider-max-height, 320px);
+    min-height: var(--control-slider-min-height, 200px);
+    width: var(--control-slider-thickness, 100px);
+  }
+
+  &[data-direction="left"], &[data-direction="right"]{
+    width: 45vw;
+    max-width: 320px;
+    min-height: 200px;
+    height: var(--control-slider-thickness, 100px);
+  }
+}
+
+.Slider{
+  width: 100%;
+  height: 100%;
+  border-radius: var(--control-slider-border-radius, 24px);
+
+  position: relative;
+  cursor: pointer;
+
+  &:not([data-floating-handle]){
+    overflow: hidden;
+  }
+}
+
+.TrackBackground{
+  width: 100%;
+  height: 100%;
+
+  border-radius: var(--control-slider-border-radius, 24px);
+  top: 0;
+  left: 0;
+  background: var(--control-slider-background);
+  opacity: var(--control-slider-background-opacity);
+}
+
+
+.Handle{
+  height: var(--control-slider-handle-size, 10px);
+  background: var(--control-slider-color);
+  position: absolute;
+
+  border-radius: var(--control-slider-border-radius, 24px);
+
+  &::after{
+    position: absolute;
+    content: "";
+    margin: auto;
+    border-radius: 4px;
+    background-color: var(--control-slider-handle-color, #ffffff);
+    top: calc(calc(var(--control-slider-handle-size, 4px) / 2) + calc(4px / 2));
+    bottom: initial;
+    width: 50%;
+    height: 4px;
+    right: 0;
+    left: 0;
+  }
+}
+
+.TrackBar{
+  border-radius: var(--control-slider-border-radius, 24px);
+
+  top: 0;
+  left: 0;
+  background-color: var(--control-slider-color);
+  position: absolute;
+
+  &::after{
+    position: absolute;
+    content: "";
+    margin: auto;
+    border-radius: 4px;
+    background-color: var(--control-slider-handle-color, #ffffff);
+  }
+}
+
+.TrackBarContent{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  > div{
+    height: 100%;
+  }
+}
+
+.showHandle{
+  --slider-size: calc( 100% - 2 * var(--control-slider-handle-margin, 12px) - var(--control-slider-handle-size, 4px) );
+}
+
+[data-direction="up"] .TrackBar{
+  transform: translate3d(0,calc((1 - var(--value,0)) * var(--slider-size)),0);
+
+  &:after{
+    top: var(--control-slider-handle-margin, 12px);
+    bottom: initial;
+    width: 50%;
+    height: var(--control-slider-handle-size, 4px);
+    right: 0;
+    left: 0;
+  }
+}
+
+[data-direction="up"] .Handle{
+  bottom: calc(var(--value,0) * (100% - var(--control-slider-handle-size, 4px)));
+}
+
+[data-direction="down"] .Handle{
+  top: calc(var(--value,0) * (100% - var(--control-slider-handle-size, 4px)));
+}
+
+[data-direction="up"] .TrackBarContent{
+  transform: translate3d(0,calc((1 - var(--value,0)) * var(--slider-size)),0);
+  overflow: hidden;
+  > div{
+    transform: translate3d(0,calc((0 - calc(1 - var(--value,0))) * var(--slider-size)),0);
+  }
+}
+
+[data-direction="down"] .TrackBar{
+  transform: translate3d(0,calc((0 - calc(1 - var(--value,0))) * var(--slider-size)),0);
+
+  &:after{
+    bottom: var(--control-slider-handle-margin, 12px);
+    top: initial;
+    width: 50%;
+    height: var(--control-slider-handle-size, 4px);
+    right: 0;
+    left: 0;
+  }
+}
+
+[data-direction="right"] .TrackBar{
+  transform: translate3d(calc((0 - calc(1 - var(--value,0)) ) * var(--slider-size)), 0,0);
+
+  &:after{
+    height: 50%;
+    width: var(--control-slider-handle-size, 4px);
+    right: var(--control-slider-handle-margin, 12px);
+    left: initial;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+[data-direction="left"] .TrackBar{
+  transform: translate3d(calc((1 - var(--value,0)) * var(--slider-size)),0,0);
+
+  &:after{
+    height: 50%;
+    width: var(--control-slider-handle-size, 4px);
+    left: var(--control-slider-handle-margin, 12px);
+    right: initial;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+[data-dragging="false"] .TrackBar{
+  transition: transform 180ms ease-in-out 0s, background-color 180ms ease-in-out 0s;
+}
+
+[data-dragging="false"] .Handle{
+  transition: bottom 180ms ease-in-out 0s, top 180ms ease-in-out 0s;
+}
+
+[data-dragging="false"] .TrackBarContent, [data-dragging="false"] .TrackBarContent > div{
+  transition: transform 180ms ease-in-out 0s;
+}

@@ -1,0 +1,15 @@
+{
+  "name": "@home-assistant-react/tailwindcss-config",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    ".": "./tailwind.config.ts"
+  },
+  "devDependencies": {
+    "@home-assistant-react/typescript-config": "workspace:*",
+    "tailwindcss": "^3.4.3"
+  },
+  "dependencies": {
+    "tailwindcss-animate": "^1.0.7"
+  }
+}

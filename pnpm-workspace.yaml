@@ -1,0 +1,6 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+  - "config/*"
+  - "panels/*"
+  - "property-controllers/*"

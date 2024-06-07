@@ -1,0 +1,63 @@
+.panel{
+    user-select: none;
+}
+
+.panel[data-is-button]:active{
+    transform: scale(0.90);
+}
+
+.default-panel-normal{
+    background-image: linear-gradient(158deg, rgba(250,252,255,1) 0%, rgba(237,240,250,1) 100%);
+    color: #8183B5;
+    cursor: pointer;
+    border-radius: 14px;
+    transition: all 0.4s;
+}
+
+.default-panel-normal > .hover-bg {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.1);
+    opacity: 0;
+}
+
+.default-panel-normal:hover{
+    position: relative;
+}
+
+.default-panel-normal:hover > .hover-bg {
+    opacity: 0.3;
+}
+
+.default-panel-active{
+    background-image: linear-gradient(158deg, rgba(142,141,226,1) 0%, rgba(114,121,224,1) 100%);
+    color: #FAFEFF;
+    cursor: pointer;
+    border-radius: 14px;
+    transition: all 0.4s;
+}
+
+.dark .default-panel-normal{
+    background-image: linear-gradient(158deg, rgba(34,34,34,1) 0%, rgba(45,45,45,1) 100%);
+    color: #CDD1E1;
+    cursor: pointer;
+    border-radius: 14px;
+    transition: all 0.4s;
+}
+
+.dark .default-panel-active{
+    background-image: linear-gradient(158deg, rgba(45,55,65,1) 0%, rgba(85,95,105,1) 100%);
+    color: #FFFFFF;
+    cursor: pointer;
+    border-radius: 14px;
+    transition: all 0.4s;
+}
+
+.panels-group .swiper{
+    overflow-y: visible!important;
+}
+
+.panels-group .swiper-pagination{
+    bottom: 20px!important;
+}

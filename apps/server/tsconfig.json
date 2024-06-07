@@ -1,0 +1,15 @@
+{
+  "extends": "@home-assistant-react/typescript-config/node.json",
+  "include": ["src/**/*", "./src/express.d.ts", "./src/ws.d.ts"],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs",
+      "strict": true,
+    }
+  },
+  "compilerOptions": {
+    "lib": ["ES2020", "DOM", "DOM.Iterable", "WebWorker"],
+    "module": "commonjs",
+    "strict": false
+  }
+}

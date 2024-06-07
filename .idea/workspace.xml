@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="52430166-861c-4394-b1ce-86da94b8f065" name="Changes" comment="Refactor DashboardProvider and enhance server services&#10;&#10;Updated the DashboardProvider component to use API client methods instead of the previously used useDashboardServices hook. Adjusted the 'updateDashboard' server-side method to handle the updating workflow more efficiently and with more transparency regarding process status. Also added a new method 'updateDashboard' to the API client. Added AppArmor support to the addon configuration. Various minor changes are also included to further enhance performance and readability.">
+      <change afterPath="$PROJECT_DIR$/apps/server/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/src/components/integration-modals/GoogleIntegrationLoginModal/GoogleIntegrationLoginModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/components/integration-modals/GoogleIntegrationLoginModal/GoogleIntegrationLoginModal.tsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev-node-server" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;JasonScoppetta&quot;
+  }
+}</component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1717773406" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:home-assistant-react/dashboard.git&quot;,
+    &quot;accountId&quot;: &quot;602a7fe1-33e2-4215-a719-4659c1b92287&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+        &quot;associatedIndex&quot;: 1
+        }</component>
+  <component name="ProjectId" id="2fP6TSP89XtxGZfrR1Qolaj822f" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Docker.devcontainer/Dockerfile.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/jason/WebstormProjects/dashboard/apps/server",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "pnpm",
+    "npm.Dashboard.executor": "Run",
+    "npm.dev.executor": "Run",
+    "npm.server > dev.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "/Users/jason/WebstormProjects/dashboard/node_modules/prettier",
+    "settings.editor.selected.configurable": "Errors",
+    "ts.external.directory.path": "/Users/jason/WebstormProjects/dashboard/packages/hooks/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "TEXT"
+    ]
+  }
+}]]></component>
+  <component name="RdControllerToolWindowsLayoutState" isNewUi="true">
+    <layout>
+      <window_info id="Bookmarks" show_stripe_button="false" side_tool="true" />
+      <window_info id="Commit_Guest" show_stripe_button="false" />
+      <window_info id="Pull Requests" show_stripe_button="false" />
+      <window_info id="Merge Requests" show_stripe_button="false" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.50112617" visible="true" weight="0.11867162" />
+      <window_info id="Commit" order="1" sideWeight="0.50108695" weight="0.3300419" />
+      <window_info active="true" id="Structure" order="2" sideWeight="0.4988739" side_tool="true" visible="true" weight="0.11867162" />
+      <window_info anchor="bottom" id="TODO" show_stripe_button="false" />
+      <window_info anchor="bottom" id="File Transfer" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TypeScript" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="Problems" order="1" />
+      <window_info anchor="bottom" id="Problems View" order="2" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="3" visible="true" weight="0.42944443" />
+      <window_info anchor="bottom" id="Services" order="4" weight="0.32966506" />
+      <window_info anchor="right" id="Coverage" show_stripe_button="false" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Notifications" order="0" weight="0.25" />
+      <window_info anchor="right" id="AIAssistant" order="1" weight="0.25" />
+      <window_info anchor="right" id="Database" order="2" weight="0.25" />
+      <window_info anchor="right" id="Gradle" order="3" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="4" weight="0.25" />
+      <window_info anchor="right" id="Endpoints" order="5" weight="0.3300801" />
+    </layout>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/apps/server" />
+      <recent name="$PROJECT_DIR$/addon/dist" />
+      <recent name="$PROJECT_DIR$/apps/dashboard" />
+      <recent name="$PROJECT_DIR$/apps/server/dist/public" />
+      <recent name="$PROJECT_DIR$/.devcontainer" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/apps/server/src/public/login-pages" />
+      <recent name="$PROJECT_DIR$/addon/dist" />
+      <recent name="$PROJECT_DIR$/addon" />
+      <recent name="$PROJECT_DIR$/apps/server/src" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.Dashboard">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/dashboard/apps/dashboard/dist/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="decontainer/Dockerfile: Compose Deployment" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="containerName" value="" />
+          <option name="sourceFilePath" value="decontainer/Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="Dashboard" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="server &gt; dev" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/apps/server/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Docker.decontainer/Dockerfile: Compose Deployment" />
+      <item itemvalue="JavaScript Debug.index.html" />
+      <item itemvalue="npm.Dashboard" />
+      <item itemvalue="npm.server &gt; dev" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="Docker.decontainer/Dockerfile: Compose Deployment" />
+        <item itemvalue="Docker.decontainer/Dockerfile: Compose Deployment" />
+        <item itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-e20c6e5d2dc8-JavaScript-WS-242.14146.21" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="52430166-861c-4394-b1ce-86da94b8f065" name="Changes" comment="" />
+      <created>1713690372900</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1713690372900</updated>
+      <workItem from="1713690373950" duration="7372000" />
+      <workItem from="1713700637682" duration="6693000" />
+      <workItem from="1713707470235" duration="3579000" />
+      <workItem from="1713711579667" duration="44739000" />
+      <workItem from="1713804555852" duration="29977000" />
+      <workItem from="1713884977723" duration="3998000" />
+      <workItem from="1713889604490" duration="102799000" />
+      <workItem from="1714291073040" duration="36515000" />
+      <workItem from="1714336199985" duration="12948000" />
+      <workItem from="1715335136319" duration="8000" />
+      <workItem from="1715335263973" duration="5000" />
+      <workItem from="1715335286138" duration="3000" />
+      <workItem from="1715427435867" duration="3080000" />
+      <workItem from="1715765603613" duration="620000" />
+      <workItem from="1715773211889" duration="7000" />
+      <workItem from="1716573822241" duration="33413000" />
+      <workItem from="1716658024154" duration="79000" />
+      <workItem from="1716706212944" duration="1815000" />
+      <workItem from="1716710179602" duration="48876000" />
+      <workItem from="1716799078044" duration="51475000" />
+      <workItem from="1716933696917" duration="23955000" />
+      <workItem from="1716988226488" duration="37284000" />
+      <workItem from="1717087901099" duration="138000" />
+      <workItem from="1717090222886" duration="21000" />
+      <workItem from="1717090250410" duration="15877000" />
+      <workItem from="1717140755913" duration="18355000" />
+      <workItem from="1717310543538" duration="2735000" />
+      <workItem from="1717340628040" duration="396000" />
+      <workItem from="1717341307791" duration="1798000" />
+      <workItem from="1717401126981" duration="4226000" />
+      <workItem from="1717405625470" duration="119000" />
+      <workItem from="1717437805503" duration="58265000" />
+      <workItem from="1717659072655" duration="20346000" />
+      <workItem from="1717684128417" duration="108000" />
+      <workItem from="1717684255201" duration="3142000" />
+    </task>
+    <task id="LOCAL-00026" summary="Removed unused styles and modified UI components&#10;&#10;Cleaned up the codebase by deleting unused style files across various modules. Modified color schemes and UI components in several files to improve visual consistency. Made updates to the text color scheme, hover actions, adding animations, and improving the backdrop aesthetics and shadows.">
+      <option name="closed" value="true" />
+      <created>1716738517525</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1716738517525</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Remove unused helper functions and theme settings&#10;&#10;Numerous helper functions alongside some theme settings which were unused and thus unnecessary have been removed. This includes various formatting functions and theme-to-css variable converters. The removal cleans the codebase, eliminating unneeded files and functions that may cause confusion and clutter.">
+      <option name="closed" value="true" />
+      <created>1716749531942</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1716749531942</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Remove unused React imports from property controllers&#10;&#10;The React imports were removed from several property controller files, as they were not being used. This cleanup is part of ongoing efforts to maintain a lean and efficient codebase.">
+      <option name="closed" value="true" />
+      <created>1716760264252</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1716760264252</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Remove unused React imports from property controllers&#10;&#10;The React imports were removed from several property controller files, as they were not being used. This cleanup is part of ongoing efforts to maintain a lean and efficient codebase.">
+      <option name="closed" value="true" />
+      <created>1716760327275</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1716760327275</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Remove various UI components and related CSS modules">
+      <option name="closed" value="true" />
+      <created>1716760415228</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1716760415228</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Refactor UI components and improve panel editor options&#10;&#10;Several UI components across the dashboard application have been refactored to improve consistency and maintainability. An enhancement was made to the panel editor, adding more configuration options for better customization. Components that had unused style files were cleaned up.">
+      <option name="closed" value="true" />
+      <created>1716760487035</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1716760487035</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Refactor UI components and improve panel editor options&#10;&#10;Updated various UI components in the dashboard to enhance consistency and maintainability. Enhanced the panel editor by adding more configuration options to allow for better customization while removing unused style files from the components. Two new hooks are introduced, usePanelLoadingEffect and useDebouncedEffect. The spinner component has been updated to accommodate the loading state as well. The panel state now includes an isLoading state.">
+      <option name="closed" value="true" />
+      <created>1716804317953</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1716804317953</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Update SelectInputProps, add ThemeContext, and create new UI components&#10;&#10;Modified the SelectInputProps in the SelectInput.types file, added the ThemeContext in the registerContexts file, and created new components related to SwitchInput and StyleShadow. New theme import and export features were also implemented.">
+      <option name="closed" value="true" />
+      <created>1716821985078</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1716821985078</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Added camera panel support and additional helper function&#10;&#10;Implemented support for a new camera panel in the dashboard application, together with the associated settings and functionality. Also added a helper function for retrieving a panel DOM object by its id.">
+      <option name="closed" value="true" />
+      <created>1716839029210</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1716839029210</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Add Action Panel and Script Support&#10;&#10;Added a new Action Panel and implemented script service functionality. Furthermore, prepared the Panel for configurations such as custom styles, custom icons, and custom labels. Also, added a helper function to convert snake case strings to camel case.">
+      <option name="closed" value="true" />
+      <created>1716843106073</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1716843106073</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Add Action Panel and Script Support&#10;&#10;Added a new Action Panel and implemented script service functionality. Furthermore, prepared the Panel for configurations such as custom styles, custom icons, and custom labels. Also, added a helper function to convert snake case strings to camel case.">
+      <option name="closed" value="true" />
+      <created>1716845122067</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1716845122067</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Add push button feature to panels and useCancellablePromise hook&#10;&#10;This commit introduces a push button feature to various panels such as Toggle, Light, and Action. Panels now support `isPushButton` prop to transform them into buttons with specific active styling. It also adds a new `useCancellablePromise` hook for handling cancellable promises, ensuring promises are not resolved when the components are unmounted. Apart from these, helper functions such as `getCallbackOrTypeValue` and `getPromiseOrTypeValue` are introduced for added flexibility and efficiency.">
+      <option name="closed" value="true" />
+      <created>1716905315306</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1716905315306</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Add IconDictionaries with associated hooks&#10;&#10;Two new types were introduced, IconDictionaryItem and IconDictionaries. Additionally, a new hook, useIconDictionaries, has been added to load icon dictionaries dynamically. The icon dictionaries are made available globally through the Window interface.">
+      <option name="closed" value="true" />
+      <created>1716929635206</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1716929635206</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Remove obsolete files and add new CSS configurations&#10;&#10;Two obsolete files, &quot;reset.css&quot; and &quot;definitions.d.ts&quot; were deleted. Furthermore, the CSS configurations were updated in several files, including &quot;useIconDictionaries.ts&quot;, &quot;base.json&quot;, and &quot;index.css&quot;. A new CSS configuration &quot;tailwind.css&quot; was also added. This commit improves the stylistic aspects of the dashboard application.">
+      <option name="closed" value="true" />
+      <created>1716933156269</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1716933156269</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Update dashboard configurations and add new hooks&#10;&#10;Cleaned up imports and revised configuration settings in the dashboard application. Also added new hooks, useSelectedDashboardView and useGetAuthApiClient, to streamline and simplify state management. Removed some files in the ESLint library due to duplication or obsolescence.">
+      <option name="closed" value="true" />
+      <created>1716938900964</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1716938900965</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Updated assets and public files">
+      <option name="closed" value="true" />
+      <created>1716938924607</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1716938924607</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Refactor DashboardGrid and AddPanelDrawer components into more granular parts&#10;&#10;Organize the components directory and dashboard-grid component into smaller, more granular parts for better readability and maintainability. Move the helper functions related to the grid layout into a separate `helpers.ts` file within the `dashboard-grid` directory. Also refactor code for readability and update import paths accordingly.">
+      <option name="closed" value="true" />
+      <created>1716938934920</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1716938934921</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Add URL validation and refactor login process&#10;&#10;Provides an URL validation helper method and refactors the login process with the addition of form handling hooks. Also a components directory has been migrated to a granular structure with revised import paths. Changes to TextInput.tsx and workspace.xml files were also accomplished.">
+      <option name="closed" value="true" />
+      <created>1716940104812</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1716940104812</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Refactor various components and relocate files&#10;&#10;Refactored several editor components of the dashboard app and moved files into more granular directories. This improves code organization and readability. The refactoring includes the PanelEditor and PanelEditorProperties components, the DashboardSidebar, and others. Some types were also directly integrated into the corresponding component files. This organization will ease future maintenances and updates by providing more clear and specific file locations and structures.">
+      <option name="closed" value="true" />
+      <created>1716973765640</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1716973765640</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Refactored components and relocated files for better structure&#10;&#10;Significant refactoring of various components within the dashboard app. This change also included relocating of files into more granular directories for better organization and enhanced readability. Some types were directly embedded into the related component files. This new structure aims to ease future maintenance and updates by providing clearer and more specific file locations and structures.">
+      <option name="closed" value="true" />
+      <created>1716978561711</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1716978561711</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Eslint fixes">
+      <option name="closed" value="true" />
+      <created>1716991037257</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1716991037257</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Eslint fixes">
+      <option name="closed" value="true" />
+      <created>1716994309368</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1716994309368</updated>
+    </task>
+    <task id="LOCAL-00048" summary="%H&amp;L$TorrentISPRO8789$Remove unused style editor files and add new helper methods&#10;&#10;Deleted unused style-editor files pertaining to background gradient, image, border, shadow and text from the application. Added a new helper function for stripping undefined values from an object. Introduced new Collapsible component and types with respective export file. Minor changes in existing files related to dashboard and style editor have been done to cater for these modifications.">
+      <option name="closed" value="true" />
+      <created>1717075675208</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1717075675208</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Add view styles and sidebar panel styles to ThemeProvider and PanelCard&#10;&#10;Added new properties to ThemeState, PanelState, and DashboardState to allow for additional styles for views and sidebars. Updated the ThemeProvider and PanelCard components to use these new styles. This provides additional customization options for the display of dashboards.">
+      <option name="closed" value="true" />
+      <created>1717076549635</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1717076549635</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Add climate slider provider and associated CSS&#10;&#10;Introduced a new ClimateSliderContext provider in the UI for controlling and updating the state of the climate slider. Additionally, complemented the UI changes with related CSS styles. Also, added the @use-gesture/react dependency in the UI package.%H&amp;L$TorrentISPRO8789$">
+      <option name="closed" value="true" />
+      <created>1717156192881</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1717156192882</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Missing Slider index file">
+      <option name="closed" value="true" />
+      <created>1717177822455</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1717177822455</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Removed custom_components from this repo. Moved to the dedicated one">
+      <option name="closed" value="true" />
+      <created>1717179192151</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1717179192151</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Add basic project information to package.json&#10;&#10;This commit includes basic project information within package.json file for the Home Assistant React Dashboard including project's description, version, author, and license details.">
+      <option name="closed" value="true" />
+      <created>1717181689370</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1717181689370</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Update README layout and change license type&#10;&#10;The README file has been significantly updated to have a more informative and polished layout, including sections: Key Features, How to Use, and Credits, among others. Also, the type of license in the package.json file has been changed from Apache-2.0 to MIT.">
+      <option name="closed" value="true" />
+      <created>1717184025105</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1717184025105</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Update README layout and change license type">
+      <option name="closed" value="true" />
+      <created>1717184084408</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1717184084408</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Update README layout and change license type">
+      <option name="closed" value="true" />
+      <created>1717184118177</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1717184118177</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Update README layout and change license type">
+      <option name="closed" value="true" />
+      <created>1717184272341</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1717184272341</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Update logo source URL in README.md&#10;&#10;The logo source URL in the README.md file was outdated. It has now been updated to point to the current logo in the development branch of the Home Assistant React Dashboard repository. This change ensures that">
+      <option name="closed" value="true" />
+      <created>1717184436066</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1717184436066</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Add Under Development warning to README&#10;&#10;A warning about the ongoing development and potential instability of the repository has been added to the README file. This serves to inform users of the potential risks of using code from the repository in a production environment. Contributions and feedback are encouraged, keeping in mind that major changes may occur regularly.">
+      <option name="closed" value="true" />
+      <created>1717184771079</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1717184771079</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Updated logo">
+      <option name="closed" value="true" />
+      <created>1717239864447</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1717239864447</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Updated logo">
+      <option name="closed" value="true" />
+      <created>1717239986576</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1717239986576</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Updated logo">
+      <option name="closed" value="true" />
+      <created>1717240491371</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1717240491371</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Updated logo">
+      <option name="closed" value="true" />
+      <created>1717240776481</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1717240776481</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Moved favicon">
+      <option name="closed" value="true" />
+      <created>1717242034820</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1717242034820</updated>
+    </task>
+    <task id="LOCAL-00065" summary="%H&amp;L$TorrentISPRO8789$Add MIT License to the project&#10;&#10;A MIT License has been added to the project. With addition of this license, the software received the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software.">
+      <option name="closed" value="true" />
+      <created>1717246969028</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1717246969028</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Updated readme">
+      <option name="closed" value="true" />
+      <created>1717247591005</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1717247591005</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Start working on node server%H&amp;L$TorrentISPRO8789$">
+      <option name="closed" value="true" />
+      <created>1717494619633</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1717494619633</updated>
+    </task>
+    <task id="LOCAL-00068" summary="Implemented import-export and plugins services&#10;&#10;Added import-export services and updated the plugins services. This involves creating new routes for importing and exporting data, along with methods to handle these operations. Moreover, the plugins services were enhanced to support new actions such as enabling, disabling, uninstalling, and uploading plugin. Also, fixed the plugin preview URL in useGetPluginImageUrl hook.">
+      <option name="closed" value="true" />
+      <created>1717506324142</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1717506324142</updated>
+    </task>
+    <task id="LOCAL-00069" summary="Update cloud integration related files and refactor hooks&#10;&#10;Removed obsolete cloud integration type files and introduced several new files to handle cloud API integration. Refactored GoogleIntegrationLabel for enhanced clarity and consistency. Created new cache helper functions and a login_complete.html page, and revised UI components and server paths. Introduced interfaces and functions for photo manipulation, along with cloud integration-related routes in the api/v1/index.ts file.">
+      <option name="closed" value="true" />
+      <created>1717677708770</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1717677708770</updated>
+    </task>
+    <task id="LOCAL-00070" summary="%H&amp;L$TorrentISPRO8789$Update server configs and addon dependencies&#10;&#10;Removed an obsolete server configuration file and replaced a hardcoded server port with a dynamic environment variable. Introduced axios as a new dependency in the addon package, added a new utility file for handling URL generation based on the server environment, and tweaked addon configuration properties and documentation. Also made API environment check adjustment in the error handler.">
+      <option name="closed" value="true" />
+      <created>1717704814009</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1717704814009</updated>
+    </task>
+    <task id="LOCAL-00071" summary="Remove unnecessary addon files and refactor server configurations&#10;&#10;Deleted various files in the addon directory that are no longer necessary. Adjusted server configurations in various files to improve efficiency and organization. StyleEditorCategory was also moved to a separate typescript file for cleaner implementation and usage across different files.">
+      <option name="closed" value="true" />
+      <created>1717720054424</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1717720054424</updated>
+    </task>
+    <task id="LOCAL-00072" summary="Remove unnecessary addon files and refactor server configurations&#10;&#10;Deleted various files in the addon directory that are no longer necessary. Adjusted server configurations in various files to improve efficiency and organization. StyleEditorCategory was also moved to a separate typescript file for cleaner implementation and usage across different files.">
+      <option name="closed" value="true" />
+      <created>1717720072618</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1717720072618</updated>
+    </task>
+    <task id="LOCAL-00073" summary="Add new error details and refactor server helpers&#10;&#10;Introduced error details for unauthorized access and uninitiated integration authorization. In server helpers, revamped the `getServerBaseUrl` function to handle server-base URL differently for addon configuration. Modified the `auth` function to include verification steps for integration authentication and addon configuration. Removed some unnecessary files and adjusted server and addon configurations to improve efficiency and organization.">
+      <option name="closed" value="true" />
+      <created>1717770979740</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1717770979740</updated>
+    </task>
+    <task id="LOCAL-00074" summary="Refactor DashboardProvider and enhance server services&#10;&#10;Updated the DashboardProvider component to use API client methods instead of the previously used useDashboardServices hook. Adjusted the 'updateDashboard' server-side method to handle the updating workflow more efficiently and with more transparency regarding process status. Also added a new method 'updateDashboard' to the API client. Added AppArmor support to the addon configuration. Various minor changes are also included to further enhance performance and readability.">
+      <option name="closed" value="true" />
+      <created>1717772898992</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1717772898992</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Eslint fixes" />
+    <MESSAGE value="Remove unused style editor files and add new helper methods&#10;&#10;Deleted unused style-editor files pertaining to background gradient, image, border, shadow and text from the application. Added a new helper function for stripping undefined values from an object. Introduced new Collapsible component and types with respective export file. Minor changes in existing files related to dashboard and style editor have been done to cater for these modifications." />
+    <MESSAGE value="Add view styles and sidebar panel styles to ThemeProvider and PanelCard&#10;&#10;Added new properties to ThemeState, PanelState, and DashboardState to allow for additional styles for views and sidebars. Updated the ThemeProvider and PanelCard components to use these new styles. This provides additional customization options for the display of dashboards." />
+    <MESSAGE value="Add climate slider provider and associated CSS&#10;&#10;Introduced a new ClimateSliderContext provider in the UI for controlling and updating the state of the climate slider. Additionally, complemented the UI changes with related CSS styles. Also, added the @use-gesture/react dependency in the UI package." />
+    <MESSAGE value="Missing Slider index file" />
+    <MESSAGE value="Removed custom_components from this repo. Moved to the dedicated one" />
+    <MESSAGE value="Update .idea/workspace.xml and package.json files&#10;&#10;Updated the workspace setup by removing custom_components from the repo and reflecting the changes in the .idea/workspace.xml file. Also added new fields (description, version, author, and license) to the package.json file." />
+    <MESSAGE value="Add basic project information to package.json&#10;&#10;This commit includes basic project information within package.json file for the Home Assistant React Dashboard including project's description, version, author, and license details." />
+    <MESSAGE value="Update README layout and change license type&#10;&#10;The README file has been significantly updated to have a more informative and polished layout, including sections: Key Features, How to Use, and Credits, among others. Also, the type of license in the package.json file has been changed from Apache-2.0 to MIT." />
+    <MESSAGE value="Update README layout and change license type" />
+    <MESSAGE value="Update logo source URL in README.md&#10;&#10;The logo source URL in the README.md file was outdated. It has now been updated to point to the current logo in" />
+    <MESSAGE value="Update logo source URL in README.md&#10;&#10;The logo source URL in the README.md file was outdated. It has now been updated to point to the current logo in the correct logo is displayed on the project's main GitHub page." />
+    <MESSAGE value="Add Under Development warning to README&#10;&#10;A warning about the ongoing development and potential instability of the repository has been added to the README file. This serves to inform users of the potential risks of using code from the repository in a production environment. Contributions and feedback are encouraged, keeping in mind that major changes may occur regularly." />
+    <MESSAGE value="Updated logo" />
+    <MESSAGE value="Moved favicon" />
+    <MESSAGE value="Add MIT License to the project&#10;&#10;A MIT License has been added to the project. With addition of this license, the software received the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software." />
+    <MESSAGE value="Updated readme" />
+    <MESSAGE value="Start working on node server" />
+    <MESSAGE value="Implemented import-export and plugins services&#10;&#10;Added import-export services and updated the plugins services. This involves creating new routes for importing and exporting data, along with methods to handle these operations. Moreover, the plugins services were enhanced to support new actions such as enabling, disabling, uninstalling, and uploading plugin. Also, fixed the plugin preview URL in useGetPluginImageUrl hook." />
+    <MESSAGE value="Update cloud integration related files and refactor hooks&#10;&#10;Removed obsolete cloud integration type files and introduced several new files to handle cloud API integration. Refactored GoogleIntegrationLabel for enhanced clarity and consistency. Created new cache helper functions and a login_complete.html page, and revised UI components and server paths. Introduced interfaces and functions for photo manipulation, along with cloud integration-related routes in the api/v1/index.ts file." />
+    <MESSAGE value="Update server configuration and remove unnecessary files&#10;&#10;Refactored server configuration, upgrade server port, and change default route. Also, removed obsolete .json and .ts files, and corrected import paths across various .ts files. A test index.js file and webpack configuration file have been added." />
+    <MESSAGE value="Update server configs and addon dependencies&#10;&#10;Removed an obsolete server configuration file and replaced a hardcoded server port with a dynamic environment variable. Introduced axios as a new dependency in the addon package, added a new utility file for handling URL generation based on the server environment, and tweaked addon configuration properties and documentation. Also made API environment check adjustment in the error handler." />
+    <MESSAGE value="Remove unnecessary addon files and refactor server configurations&#10;&#10;Deleted various files in the addon directory that are no longer necessary. Adjusted server configurations in various files to improve efficiency and organization. StyleEditorCategory was also moved to a separate typescript file for cleaner implementation and usage across different files." />
+    <MESSAGE value="Add new error details and refactor server helpers&#10;&#10;Introduced error details for unauthorized access and uninitiated integration authorization. In server helpers, revamped the `getServerBaseUrl` function to handle server-base URL differently for addon configuration. Modified the `auth` function to include verification steps for integration authentication and addon configuration. Removed some unnecessary files and adjusted server and addon configurations to improve efficiency and organization." />
+    <MESSAGE value="Refactor DashboardProvider and enhance server services&#10;&#10;Updated the DashboardProvider component to use API client methods instead of the previously used useDashboardServices hook. Adjusted the 'updateDashboard' server-side method to handle the updating workflow more efficiently and with more transparency regarding process status. Also added a new method 'updateDashboard' to the API client. Added AppArmor support to the addon configuration. Various minor changes are also included to further enhance performance and readability." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor DashboardProvider and enhance server services&#10;&#10;Updated the DashboardProvider component to use API client methods instead of the previously used useDashboardServices hook. Adjusted the 'updateDashboard' server-side method to handle the updating workflow more efficiently and with more transparency regarding process status. Also added a new method 'updateDashboard' to the API client. Added AppArmor support to the addon configuration. Various minor changes are also included to further enhance performance and readability." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/packages/ui/src/entity-controls/ClimateSlider/ClimateSliderController.tsx</url>
+          <line>166</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
