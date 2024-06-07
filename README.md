@@ -8,16 +8,16 @@
 
 ---
 
-## ⚠️ Warning: Under Development ⚠️
 
-**This repository is currently under active development.** 
+## <p align="center">⚠️ Warning: Under Development ⚠️ </p>
 
-Many features are still in progress and may not be fully functional or stable. 
+**<p align="center">This repository is currently under active development.</p>**
+<p align="center">
+Many features are still in progress and may not be fully functional or stable.</p>
 
-Please use caution when using any code from this repository in a production environment. 
+<p align="center">Please use caution when using any code from this repository in a production environment.</p>
 
-Feel free to contribute or provide feedback, but keep in mind that significant changes may occur frequently.
-
+<p align="center">Feel free to contribute or provide feedback, but keep in mind that significant changes may occur frequently.</p>
 ----
 
 <h4 align="center">A fully customizable dashboard for <a href="https://www.home-assistant.io/" target="_blank">Home assistant</a> made with React.</h4>
@@ -37,6 +37,14 @@ Feel free to contribute or provide feedback, but keep in mind that significant c
 </p>
 
 ![screenshot](https://community-assets.home-assistant.io/original/4X/8/c/0/8c05238daa15c046745228992a29ea7ca9aee375.jpeg)
+
+## Installation
+
+You can install the Home Assistant React Dashboard by adding the addon repository URL ( https://github.com/home-assistant-react/dashboard-addon ) to the Home Assistant Supervisor Add-on Store.
+
+
+[![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fhome-assistant-react%2Fdashboard-addon)
+
 
 ## Key Features
 
@@ -66,10 +74,6 @@ Feel free to contribute or provide feedback, but keep in mind that significant c
 - Enjoy a fluid and dynamic user experience that adapts to workflow.
 
 ### ... tbd
-
-## How To Use
-
-Install with HACS TBD...
 
 ## Credits
 

@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="52430166-861c-4394-b1ce-86da94b8f065" name="Changes" comment="Refactor DashboardProvider and enhance server services&#10;&#10;Updated the DashboardProvider component to use API client methods instead of the previously used useDashboardServices hook. Adjusted the 'updateDashboard' server-side method to handle the updating workflow more efficiently and with more transparency regarding process status. Also added a new method 'updateDashboard' to the API client. Added AppArmor support to the addon configuration. Various minor changes are also included to further enhance performance and readability.">
-      <change afterPath="$PROJECT_DIR$/apps/server/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ui/src/components/integration-modals/GoogleIntegrationLoginModal/GoogleIntegrationLoginModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/components/integration-modals/GoogleIntegrationLoginModal/GoogleIntegrationLoginModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
