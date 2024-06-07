@@ -21,7 +21,7 @@ export const useCameraEntity = <T extends HassCameraEntityAttributes>(
     getPreviewStreamUrl: (width = 800, height = 600) => {
       const entityPicture = cameraEntity?.attributes?.entity_picture;
       if (!entityPicture) return "";
-      return `${api.internalUrl}${entityPicture}${width && `&width=${parseInt(String(width))}`}${height && `&height=${parseInt(String(height))}`}`;
+      return `${api.getHassBaseUrl()}${entityPicture}${width && `&width=${parseInt(String(width))}`}${height && `&height=${parseInt(String(height))}`}`;
     },
   };
 };

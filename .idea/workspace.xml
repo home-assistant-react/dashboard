@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="52430166-861c-4394-b1ce-86da94b8f065" name="Changes" comment="Refactor DashboardProvider and enhance server services&#10;&#10;Updated the DashboardProvider component to use API client methods instead of the previously used useDashboardServices hook. Adjusted the 'updateDashboard' server-side method to handle the updating workflow more efficiently and with more transparency regarding process status. Also added a new method 'updateDashboard' to the API client. Added AppArmor support to the addon configuration. Various minor changes are also included to further enhance performance and readability.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/api/src/api/ApiClient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/api/src/api/ApiClient.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hooks/src/entities/useCameraEntity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hooks/src/entities/useCameraEntity.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +22,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev-node-server" />
+        <entry key="$PROJECT_DIR$" value="css-testing" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -44,7 +45,11 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1717773406" />
+                    <option name="lastUsedInstant" value="1717793864" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="css-testing" />
+                    <option name="lastUsedInstant" value="1717793855" />
                   </RecentBranch>
                 </list>
               </option>
@@ -69,33 +74,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Docker.devcontainer/Dockerfile.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/jason/WebstormProjects/dashboard/apps/server",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "pnpm",
-    "npm.Dashboard.executor": "Run",
-    "npm.dev.executor": "Run",
-    "npm.server > dev.executor": "Run",
-    "prettierjs.PrettierConfiguration.Package": "/Users/jason/WebstormProjects/dashboard/node_modules/prettier",
-    "settings.editor.selected.configurable": "Errors",
-    "ts.external.directory.path": "/Users/jason/WebstormProjects/dashboard/packages/hooks/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Docker.devcontainer/Dockerfile.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/jason/WebstormProjects/dashboard/apps/server&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
+    &quot;npm.Dashboard.executor&quot;: &quot;Run&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.server &gt; dev.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/jason/WebstormProjects/dashboard/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/jason/WebstormProjects/dashboard/packages/hooks/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "TEXT"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;TEXT&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RdControllerToolWindowsLayoutState" isNewUi="true">
     <layout>
       <window_info id="Bookmarks" show_stripe_button="false" side_tool="true" />
@@ -187,6 +192,7 @@
       <list>
         <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="Docker.decontainer/Dockerfile: Compose Deployment" />
+        <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="Docker.decontainer/Dockerfile: Compose Deployment" />
         <item itemvalue="JavaScript Debug.index.html" />
       </list>

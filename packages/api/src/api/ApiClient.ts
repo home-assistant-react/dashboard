@@ -46,7 +46,7 @@ export class ApiClient {
   public getUrl(url?: string, queryParams?: Dict, integrationName?: string) {
     const baseUrl = this.getBaseUrl() || "";
     const apiUrl = integrationName
-      ? `${baseUrl}/integrations/${integrationName}`
+      ? `/integrations/${integrationName}`
       : baseUrl;
     const queryString = queryParams ? `?${qs.stringify(queryParams)}` : "";
     return `${apiUrl}${url || ""}${queryString}`;
@@ -105,13 +105,11 @@ export class ApiClient {
     return newToken.data;
   }
 
-  public async getHandler(
-    internalIfAvailable?: boolean,
-  ): Promise<AxiosInstance> {
+  public async getHandler(): Promise<AxiosInstance> {
     await this.getAuthToken();
 
     this.handler = axios.create({
-      baseURL: this.getBaseUrl(internalIfAvailable),
+      baseURL: this.getBaseUrl(),
       headers: {
         Authorization: `Bearer ${this.authData.access_token}`,
       },
@@ -120,15 +118,13 @@ export class ApiClient {
     return this.handler;
   }
 
-  public getBaseUrl(internalIfAvailable?: boolean) {
-    if (!1) {
-      return (
-        (internalIfAvailable && this.internalUrl
-          ? this.internalUrl
-          : this.authData.hassUrl) + this.apiBaseUrl
-      );
-    }
+  public getHassBaseUrl(internalIfAvailable?: boolean) {
+    return internalIfAvailable && this.internalUrl
+      ? this.internalUrl
+      : this.authData.hassUrl;
+  }
 
+  public getBaseUrl() {
     if (
       // @ts-ignore
       (import.meta as unknown as Record<string, { MODE: string }>).env.MODE ===
@@ -202,7 +198,7 @@ export class ApiClient {
   }
 
   public async getCustomIconUploader(options?: FileUploaderOptions) {
-    const handler = await this.getHandler(true);
+    const handler = await this.getHandler();
     return new FileUploader(handler, "/custom-icons/upload", {
       fileFieldName: "svg_file",
       ...options,
@@ -210,7 +206,7 @@ export class ApiClient {
   }
 
   public async getCustomImageUploader(options?: FileUploaderOptions) {
-    const handler = await this.getHandler(true);
+    const handler = await this.getHandler();
     return new FileUploader(handler, "/custom-images/upload", {
       fileFieldName: "img_file",
       ...options,
@@ -218,7 +214,7 @@ export class ApiClient {
   }
 
   public async getPluginUploader(options?: FileUploaderOptions) {
-    const handler = await this.getHandler(true);
+    const handler = await this.getHandler();
     return new FileUploader(handler, "/plugins/upload", {
       fileFieldName: "plugin_file",
       ...options,
