@@ -23,6 +23,11 @@ export const loadInitialStatesFromHomeAssistant = async (
     currentUser: undefined,
   };
 
+  // Get the language from the browser
+  const userLang = navigator.language;
+  // Extract ISO 639-1 language code
+  const language = userLang.split("-")[0];
+
   /*
    * Load home assistant base configuration
    * */
@@ -123,7 +128,7 @@ export const loadInitialStatesFromHomeAssistant = async (
           resources: Record<string, string>;
         }>({
           type: "frontend/get_translations",
-          language: "it",
+          language,
           category: "entity_component",
         })
       )?.resources || {};
@@ -134,7 +139,7 @@ export const loadInitialStatesFromHomeAssistant = async (
           resources: Record<string, string>;
         }>({
           type: "frontend/get_translations",
-          language: "it",
+          language,
           category: "entity",
         })
       )?.resources || {};
@@ -145,7 +150,7 @@ export const loadInitialStatesFromHomeAssistant = async (
           resources: Record<string, string>;
         }>({
           type: "frontend/get_translations",
-          language: "it",
+          language,
           category: "state",
         })
       )?.resources || {};
